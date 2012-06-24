@@ -1,0 +1,73 @@
+\documentclass[]{beamer}
+\mode<presentation>
+{
+% use attribute "dark" for dark theme
+% use attribute "contrast" for maximum text contrast
+\usetheme[]{wlansi}
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{transparent}
+}  
+
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{wlansi} % The wlan slovenija package defines Mitar-approved fonts and slide layouts (has to be included after mathptmx
+
+\title{Presentation sample}
+
+%\subtitle {Include Only If Presentation Has a Subtitle}
+
+%\author{Luka Čehovin}
+
+%\institute{wlan slovenija}
+
+\date[] {1.0}
+
+\begin{document}
+
+% makes a title slide
+\maketitle
+
+\simpleslide{}{This slide contains only the main text.}{}
+
+\simpleslide{The top slot}{This slide contains the top slot text and the main text.}{}
+
+\simpleslide{}{This slide contains the main text and the bottom slot text.}{The bottom slot}
+
+\simpleslide{The top slot}{}{The bottom slot}
+
+\simpleslide{The top slot}{This slide contains text in all slots.}{The bottom slot}
+
+\simpleslideimage[height]{clipart/node_single_online.png}{This slide contains an image and some text.}
+
+\simpleslideimage[width]{clipart/node_network_online.png}{This slide contains an image and some text.}
+
+\fullslideimage{clipart/node_network_online.png}
+
+\begin{frame}
+
+This is how you make a custom (non-Mitar-approved) slide.
+
+\begin{itemize}
+\item item 1
+\item item 2
+\item item 3
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+This is how you make a custom (non-Mitar-approved) slide with enumeration.
+
+\begin{enumerate}
+\item item 1
+\item item 2
+\item item 3
+\end{enumerate}
+
+\end{frame}
+
+\simpleslide{}{That is all.}{Pretty simle, huh?}
+
+\end{document}

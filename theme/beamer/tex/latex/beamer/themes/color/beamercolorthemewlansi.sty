@@ -1,0 +1,73 @@
+\ProvidesPackage{beamercolorthemewlansi}[2012/13/06]
+
+% Copyright 2009      by Luka Cehovin   <luka@tnode.com>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\mode<presentation>
+
+\ifbeamer@dark
+	\definecolor{wlansi background}{RGB}{0,0,0}
+	\ifbeamer@contrast
+		\definecolor{wlansi alert}{RGB}{255,0,0}
+		\definecolor{wlansi title}{RGB}{255,255,255}
+		\definecolor{wlansi primary}{RGB}{255,255,255}
+		\definecolor{wlansi secondary}{RGB}{255,255,255}
+		\definecolor{wlansi tertiary}{RGB}{255,255,255}
+		\definecolor{wlansi quaternary}{RGB}{255,255,255}
+	\else
+		\definecolor{wlansi alert}{RGB}{240,0,0}
+		\definecolor{wlansi title}{RGB}{235,235,235}
+		\definecolor{wlansi primary}{RGB}{235,235,235}
+		\definecolor{wlansi secondary}{RGB}{192,192,192}
+		\definecolor{wlansi tertiary}{RGB}{150,150,150}
+		\definecolor{wlansi quaternary}{RGB}{110,110,110}
+	\fi
+\else
+	\definecolor{wlansi background}{RGB}{255,255,255}
+	\ifbeamer@contrast
+		\definecolor{wlansi alert}{RGB}{255,0,0}
+		\definecolor{wlansi title}{RGB}{0,0,0}
+		\definecolor{wlansi primary}{RGB}{0,0,0}
+		\definecolor{wlansi secondary}{RGB}{0,0,0}
+		\definecolor{wlansi tertiary}{RGB}{0,0,0}
+		\definecolor{wlansi quaternary}{RGB}{0,0,0}
+	\else
+		\definecolor{wlansi alert}{RGB}{240,0,0}
+		\definecolor{wlansi title}{RGB}{235,235,235}
+		\definecolor{wlansi primary}{RGB}{104,174,44}
+		\definecolor{wlansi secondary}{RGB}{131,131,131}
+		\definecolor{wlansi tertiary}{RGB}{120,120,120}
+		\definecolor{wlansi quaternary}{RGB}{90,90,90}
+	\fi
+\fi
+
+\setbeamercolor{normal text}{fg=wlansi secondary,bg=wlansi background}
+\setbeamercolor{normal text alert}{fg=wlansi alert,bg=wlansi background}
+
+\setbeamercolor{background canvas}{bg=wlansi background,fg=wlansi primary}
+\setbeamercolor{background}{bg=}
+
+\setbeamercolor{palette primary}{fg=wlansi primary,bg=}
+\setbeamercolor{palette secondary}{fg=wlansi secondary,bg=}
+\setbeamercolor{palette tertiary}{fg=wlansi tertiary,bg=}
+\setbeamercolor{palette quaternary}{fg=wlansi quaternary,bg=}
+
+\setbeamercolor{title}{bg=}
+\setbeamercolor{structure}{fg=wlansi secondary,bg=}
+\setbeamercolor{titlelike}{fg=wlansi primary,bg=}
+\setbeamercolor{subtitle}{fg=wlansi secondary,bg=}
+\setbeamercolor{author}{fg=wlansi tertiary,bg=}
+
+\setbeamercolor{item}{fg=wlansi quaternary,bg=wlansi background}
+%\setbeamercolor{item projected}{fg=wlansi primary,bg=wlansi quaternary}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\setbeamercolor{navigation symbols}{fg=wlansi secondary}
+\setbeamercolor{navigation symbols dimmed}{fg=wlansi quaternary}
+
+\mode
+<all>

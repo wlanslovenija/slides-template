@@ -1,0 +1,154 @@
+\ProvidesPackage{beamerouterthemewlansi}[2012/13/06]
+
+% Copyright 2009      by Luka Cehovin   <luka@tnode.com>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\mode<presentation>
+
+
+\ifbeamer@dark
+\pgfdeclareimage[height=8em,interpolate=true]{wlansilogotext}{wlansi/black_logo}
+\pgfdeclareimage[height=4.47em,interpolate=true]{wlansilogo}{wlansi/black_logo}
+\pgfdeclareimage[height=0.8em,interpolate=true]{wlansilicense}{wlansi/black_license}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{wlansi/black_background}}
+\else
+\pgfdeclareimage[height=8em,interpolate=true]{wlansilogotext}{wlansi/white_logo}
+\pgfdeclareimage[height=4.47em,interpolate=true]{wlansilogo}{wlansi/white_logo}
+\pgfdeclareimage[height=0.8em,interpolate=true]{wlansilicense}{wlansi/white_license}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{wlansi/white_background}}
+\fi
+
+\ifbeamer@nologo
+  \titlegraphic{\pgfuseimage{wlansilogotext}}
+\fi
+
+% Colors, Shades
+
+\setbeamercolor{section in head/foot}{parent=palette tertiary}
+\setbeamercolor{subsection in head/foot}{parent=palette secondary}
+
+\setbeamercolor{primary}{parent=palette primary}
+
+\setbeamercolor{author in head/foot}{parent=section in head/foot}
+\setbeamercolor{title in head/foot}{parent=subsection in head/foot}
+
+\setbeamercolor{date in head/foot}{parent=palette tertiary}
+
+\setbeamercolor{frametitle}{parent=subsection in head/foot}
+\setbeamercolor{frametitle right}{parent=section in head/foot}
+
+\usesectionheadtemplate
+  {\hfill\insertsectionhead}
+  {\hfill\color{fg!50!bg}\insertsectionhead}
+
+\pgfdeclarehorizontalshading[frametitle.bg,frametitle right.bg]{beamer@frametitleshade}{\paperheight}{%
+  color(0pt)=(frametitle.bg);
+  color(\paperwidth)=(frametitle right.bg)}
+
+\AtBeginDocument{
+  \pgfdeclareverticalshading{beamer@topshade}{\paperwidth}{%
+    color(0pt)=(bg);
+    color(4pt)=(black!50!bg)}
+}
+
+\newif\ifbeamer@logowlan
+
+\beamer@logowlantrue
+
+\newenvironment{frame*}{\beamer@logowlanfalse \begin{frame}}{\end{frame}\beamer@logowlantrue}
+
+\def\maketitle{\ifbeamer@inframe\titlepage\else\begin{frame*}\titlepage\end{frame*}\fi}
+
+% Header
+
+\defbeamertemplate*{headline}{wlansi}
+{%
+  \nointerlineskip%
+  \hbox{\leavevmode
+    \beamer@tempdim=\textwidth%
+    \advance\beamer@tempdim by \beamer@leftmargin%
+    \advance\beamer@tempdim by \beamer@rightmargin%
+\hbox{%
+      \setbox\beamer@tempbox=\hbox{\begin{minipage}[b]{\paperwidth}%
+          \leftskip0.3cm%
+          \rightskip0.3cm plus1fil\leavevmode
+\ifbeamer@logowlan%
+          \pgfuseimage{wlansilogo}%
+\else%
+\vspace*{6em}
+\fi%
+          \strut\par%
+          \nointerlineskip
+          \vbox{}%
+          \end{minipage}}%
+      \beamer@tempdim=\ht\beamer@tempbox%
+      \advance\beamer@tempdim by 7pt%
+\begin{beamercolorbox}[wd=\paperwidth,ht=\beamer@tempdim,dp=0ex,leftskip=0cm,rightskip=0cm]{primary}%
+\box\beamer@tempbox%
+\end{beamercolorbox}
+      \hskip-\paperwidth%
+    }%
+    \hskip-\Gm@rmargin%
+  }%
+  \nointerlineskip
+}
+
+
+% Frame Title
+
+\defbeamertemplate*{frametitle}{wlansi}
+{%
+
+}
+
+\defbeamertemplate*{sidebar left}{wlansi}
+{%
+
+}
+
+% Footer
+
+\defbeamertemplate*{sidebar right}{wlansi}
+{
+
+}
+
+
+\ifbeamer@numbers
+
+\defbeamertemplate*{footline}{wlansi}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.2cm,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\vfill\insertframenumber{}\hfill \pgfuseimage{wlansilicense}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{primary}%
+  \vfill%
+  \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\else
+
+\defbeamertemplate*{footline}{wlansi}
+{%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.2cm,rightskip=.3cm]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\vfill\hfill \pgfuseimage{wlansilicense}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{primary}%
+  \vfill%
+  \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\fi
+
+
+\mode
+<all>
