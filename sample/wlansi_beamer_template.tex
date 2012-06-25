@@ -11,7 +11,9 @@
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage{mathptmx}
-\usepackage{wlansi} % The wlan slovenija package defines Mitar-approved fonts and slide layouts (has to be included after mathptmx
+
+% The wlan slovenija package defines Mitar-approved fonts and slide layouts (has to be included after mathptmx)
+\usepackage{wlansi}
 
 \title{Presentation sample}
 
@@ -21,7 +23,7 @@
 
 %\institute{wlan slovenija}
 
-\date[] {1.0}
+\date[]{0.1}
 
 \begin{document}
 
@@ -38,9 +40,9 @@
 
 \simpleslide{The top slot}{This slide contains text in all slots.}{The bottom slot}
 
-\simpleslideimage[height]{clipart/node_single_online.png}{This slide contains an image and some text.}
+\simpleslideimage{clipart/node_single_online.png}{This slide contains an image and some text.}
 
-\simpleslideimage[width]{clipart/node_network_online.png}{This slide contains an image and some text.}
+\simpleslideimage{clipart/node_network_online.png}{This slide contains an image and some text.}
 
 \fullslideimage{clipart/node_network_online.png}
 
