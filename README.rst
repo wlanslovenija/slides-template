@@ -12,7 +12,7 @@ run ``mktexlsr`` to index the files. If you want to keep the files in the
 repository you have to configure environmental variable ``TEXMFHOME`` like
 this::
 
-    export TEXMFHOME=/home/lukacu/.texmf-var/:<path to repository>/theme/beamer
+    export TEXMFHOME=~/.texmf-var/:<path to repository>/theme/beamer
 
 Usually this line is written into ``.bashrc`` file so that the variable is
 present in every new terminal. You may also have to run ``mktexlsr``.
